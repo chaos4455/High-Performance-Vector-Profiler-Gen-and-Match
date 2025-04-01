@@ -596,23 +596,6 @@ def setup_database_pragmas(conn: sqlite3.Connection):
             logging.error(f"❌ SQLite connection/transaction error for {table_name}: {e}", exc_info=True)
             return False
     ```
-
----
-
-
-[salvar-blobs-link]: # # Placeholder, link to the function definition if possible
-[executemany-link]: https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor.executemany
-[executemany-shield]: https://img.shields.io/badge/DB%20Write-cursor.executemany-brightgreen?style=for-the-badge&logo=sqlite
-[blob-shield]: https://img.shields.io/badge/Data%20Type-SQLite%20BLOB-blueviolet?style=for-the-badge&logo=sqlite
-[blob-link]: https://www.sqlite.org/datatype3.html
-[tobytes-shield]: https://img.shields.io/badge/Serialization-NumPy%20.tobytes()-orange?style=for-the-badge&logo=numpy
-[tobytes-link]: https://numpy.org/doc/stable/reference/generated/numpy.ndarray.tobytes.html
-[tx-shield]: https://img.shields.io/badge/Transaction-Explicit%20BEGIN%7CCOMMIT-darkgreen?style=for-the-badge&logo=sqlite
-[tx-link]: https://www.sqlite.org/lang_transaction.html
-[or-replace-shield]: https://img.shields.io/badge/SQL%20Clause-INSERT%20OR%20REPLACE-yellow?style=for-the-badge&logo=sqlite
-[or-replace-link]: https://www.sqlite.org/lang_insert.html
-
-
 ---
 
 ### ▶️ Step 6: Blazing-Fast Clustering with FAISS ([`realizar_clustering`][realizar-clustering-link], [`faiss.Kmeans`][faiss-kmeans-link]) ⚡️📊🧩
