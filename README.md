@@ -6,16 +6,33 @@
 [![Focus: High Performance][perf-focus-shield]][perf-focus-link]
 [![Output: Data + Vectors + Embeddings][output-shield]][output-link]
 [![Scalability: Massive Datasets][scale-shield]][scale-link]
+[![Algorithm: KMeans Clustering][kmeans-shield]][kmeans-link] <!-- Added -->
+[![ML Use: Traditional Models][trad-ml-shield]][trad-ml-link] <!-- Added -->
+[![ML Use: ANN Search & Deep Learning][ann-dl-shield]][ann-dl-link] <!-- Added -->
 
-<!-- Key Performance Techniques -->
+<!-- Key Performance Techniques & Optimizations -->
 [![Parallelism: Multiprocessing][parallel-mp-shield]][parallel-mp-link]
+[![Concurrency Model: Process-Based][concurrency-proc-shield]][concurrency-proc-link]
+[![Technique: Multithreading (I/O Bound)][threading-shield]][threading-link] <!-- Added -->
+[![Technique: AsyncIO (I/O Bound)][asyncio-shield]][asyncio-link] <!-- Added -->
 [![Optimization: CPU Bound Tasks][cpu-opt-shield]][cpu-opt-link]
 [![Library: NumPy Powered][numpy-perf-shield]][numpy-link]
 [![Library: FAISS Accelerated][faiss-perf-shield]][faiss-link]
-[![Database I/O: Batch Optimized][db-batch-shield]][db-batch-link]
-[![Memory Efficiency: Float32][mem-f32-shield]][mem-f32-link]
-[![Concurrency Model: Process-Based][concurrency-proc-shield]][concurrency-proc-link]
 [![Hardware Acceleration: Optional GPU (FAISS)][gpu-shield]][gpu-link]
+[![Optimization: C++ | CUDA Backend][cpp-cuda-shield]][cpp-cuda-link] <!-- Added -->
+[![Database I/O: Batch Optimized][db-batch-shield]][db-batch-link]
+[![DB Write: cursor.executemany][executemany-shield]][executemany-link] <!-- Added -->
+[![DB Read: Indexed Lookup (PK)][db-index-lookup-shield]][db-index-lookup-link] <!-- Added -->
+[![Transaction: Explicit BEGIN|COMMIT][tx-shield]][tx-link] <!-- Added -->
+[![SQL Clause: INSERT OR REPLACE][or-replace-shield]][or-replace-link] <!-- Added -->
+[![Memory Efficiency: Float32][mem-f32-shield]][mem-f32-link]
+[![DataPrep: float32 & C-Contiguous][dataprep-f32-contig-shield]][dataprep-link] <!-- Added (Specific NumPy aspect) -->
+[![Serialization: NumPy .tobytes()][tobytes-shield]][tobytes-link] <!-- Added -->
+[![Data Type: SQLite BLOB][blob-shield]][blob-link] <!-- Added -->
+[![Technique: Feature Engineering][feat-eng-shield]][feat-eng-link] <!-- Added -->
+[![Technique: L2 Normalization][l2-norm-shield]][l2-norm-link] <!-- Added -->
+[![FAISS: KMeans nredo][nredo-shield]][nredo-link] <!-- Added -->
+[![Simulation: Hashing & Modulation][sim-hash-mod-shield]][sim-hash-mod-link] <!-- Added -->
 
 <!-- Core Technologies -->
 [![Python Version][python-shield]][python-link]
@@ -27,6 +44,27 @@
 [![Faker][faker-shield]][faker-link]
 [![Rich][rich-shield]][rich-link]
 [![Logging][logging-shield]][logging-link]
+
+<!-- Features & Persistence -->
+[![Persistence: FAISS Index (.index)][faiss-index-persist-shield]][faiss-write-index-link] <!-- Added/Modified -->
+[![Feature: Reusable Index][faiss-index-reuse-shield]][faiss-read-index-link] <!-- Added/Modified -->
+[![Task: Persist Cluster Map][persist-clusters-shield]][persist-clusters-link] <!-- Added -->
+
+<!-- Tunable Parameters -->
+[![Tune: CPU Workers][tune-cpu-shield]][tune-link] <!-- Added -->
+[![Tune: Chunk Size][tune-chunk-shield]][tune-link] <!-- Added -->
+[![Tune: Vector Dimensions][tune-dims-shield]][tune-link] <!-- Added -->
+[![Tune: GPU Acceleration][tune-gpu-shield]][tune-link] <!-- Added -->
+[![Tune: KMeans Params][tune-kmeans-shield]][tune-link] <!-- Added -->
+[![Tune: Persistence Options][tune-persist-shield]][tune-link] <!-- Added -->
+
+<!-- Key Concepts -->
+[![Concept: GIL (Global Interpreter Lock)][gil-shield]][gil-link] <!-- Added -->
+[![Concept: Performance Trade-offs][tradeoff-shield]][tradeoff-link] <!-- Added -->
+
+<!-- Validation & Output -->
+[![Output: Rich Table][rich-table-shield]][rich-table-link] <!-- Added -->
+[![Validation: Example Profile][validate-example-shield]][validate-link] <!-- Added -->
 
 <!-- Project Meta -->
 [![Code Style: Black][black-shield]][black-link]
@@ -49,6 +87,162 @@
 [![Expertise: Vector Embeddings][expertise-vector-shield]][expertise-link]
 [![Location: Maringá, PR - Brazil][location-shield]][location-link]
 
+<!-- ================== LINK DEFINITIONS ================== -->
+<!-- NOTE: Ensure ALL link definitions from BOTH original blocks are present below -->
+
+<!-- Core Functionality & Goal Links -->
+[gen-engine-shield]: https://img.shields.io/badge/Generation_Engine-Synthetic_Profiles-blue?style=for-the-badge&logo=python
+[gen-engine-link]: #
+[perf-focus-shield]: https://img.shields.io/badge/Focus-High_Performance-red?style=for-the-badge&logo=speedtest
+[perf-focus-link]: #
+[output-shield]: https://img.shields.io/badge/Output-Data_%2B_Vectors_%2B_Embeddings-brightgreen?style=for-the-badge
+[output-link]: #
+[scale-shield]: https://img.shields.io/badge/Scalability-Massive_Datasets-purple?style=for-the-badge
+[scale-link]: #
+[kmeans-shield]: https://img.shields.io/badge/Algorithm-KMeans%20Clustering-orange?style=for-the-badge
+[kmeans-link]: https://en.wikipedia.org/wiki/K-means_clustering
+[trad-ml-shield]: https://img.shields.io/badge/ML%20Use-Traditional%20Models-yellow?style=for-the-badge
+[trad-ml-link]: #
+[ann-dl-shield]: https://img.shields.io/badge/ML%20Use-ANN%20Search%20%26%20Deep%20Learning-purple?style=for-the-badge
+[ann-dl-link]: #
+
+<!-- Key Performance Techniques & Optimizations Links -->
+[parallel-mp-shield]: https://img.shields.io/badge/Parallelism-Multiprocessing-blue?style=for-the-badge&logo=python
+[parallel-mp-link]: https://docs.python.org/3/library/multiprocessing.html
+[concurrency-proc-shield]: https://img.shields.io/badge/Concurrency_Model-Process--Based-blue?style=for-the-badge&logo=python
+[concurrency-proc-link]: #
+[threading-shield]: https://img.shields.io/badge/Technique-Multithreading_(I/O%20Bound)-blue?style=for-the-badge&logo=python
+[threading-link]: https://docs.python.org/3/library/threading.html
+[asyncio-shield]: https://img.shields.io/badge/Technique-AsyncIO_(I/O%20Bound)-purple?style=for-the-badge&logo=python
+[asyncio-link]: https://docs.python.org/3/library/asyncio.html
+[cpu-opt-shield]: https://img.shields.io/badge/Optimization-CPU_Bound_Tasks-orange?style=for-the-badge
+[cpu-opt-link]: #
+[numpy-perf-shield]: https://img.shields.io/badge/Library-NumPy_Powered-blue?style=for-the-badge&logo=numpy
+[faiss-perf-shield]: https://img.shields.io/badge/Library-FAISS_Accelerated-purple?style=for-the-badge&logo=facebook
+[faiss-link]: https://faiss.ai/
+[gpu-shield]: https://img.shields.io/badge/Hardware_Acceleration-Optional_GPU_(FAISS)-green?style=for-the-badge&logo=nvidia
+[gpu-link]: https://github.com/facebookresearch/faiss/wiki/Faiss-on-the-GPU
+[cpp-cuda-shield]: https://img.shields.io/badge/Optimization-C%2B%2B%20%7C%20CUDA%20Backend-red?style=for-the-badge&logo=cplusplus
+[cpp-cuda-link]: #
+[db-batch-shield]: https://img.shields.io/badge/Database_I/O-Batch_Optimized-brightgreen?style=for-the-badge&logo=sqlite
+[db-batch-link]: #
+[executemany-shield]: https://img.shields.io/badge/DB%20Write-cursor.executemany-brightgreen?style=for-the-badge&logo=sqlite
+[executemany-link]: https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor.executemany
+[db-index-lookup-shield]: https://img.shields.io/badge/DB%20Read-Indexed%20Lookup%20(PK)-darkblue?style=for-the-badge&logo=sqlite
+[db-index-lookup-link]: #
+[tx-shield]: https://img.shields.io/badge/Transaction-Explicit%20BEGIN%7CCOMMIT-darkgreen?style=for-the-badge&logo=sqlite
+[tx-link]: https://www.sqlite.org/lang_transaction.html
+[or-replace-shield]: https://img.shields.io/badge/SQL%20Clause-INSERT%20OR%20REPLACE-yellow?style=for-the-badge&logo=sqlite
+[or-replace-link]: https://www.sqlite.org/lang_insert.html
+[mem-f32-shield]: https://img.shields.io/badge/Memory_Efficiency-Float32-teal?style=for-the-badge&logo=numpy
+[mem-f32-link]: #
+[dataprep-f32-contig-shield]: https://img.shields.io/badge/DataPrep-float32%20%26%20C--Contiguous-blue?style=for-the-badge&logo=numpy
+[dataprep-link]: #
+[tobytes-shield]: https://img.shields.io/badge/Serialization-NumPy%20.tobytes()-orange?style=for-the-badge&logo=numpy
+[tobytes-link]: https://numpy.org/doc/stable/reference/generated/numpy.ndarray.tobytes.html
+[blob-shield]: https://img.shields.io/badge/Data%20Type-SQLite%20BLOB-blueviolet?style=for-the-badge&logo=sqlite
+[blob-link]: https://www.sqlite.org/datatype3.html
+[feat-eng-shield]: https://img.shields.io/badge/Technique-Feature%20Engineering-blueviolet?style=for-the-badge
+[feat-eng-link]: https://en.wikipedia.org/wiki/Feature_engineering
+[l2-norm-shield]: https://img.shields.io/badge/Technique-L2%20Normalization-teal?style=for-the-badge
+[l2-norm-link]: https://en.wikipedia.org/wiki/Norm_(mathematics)#Euclidean_norm
+[nredo-shield]: https://img.shields.io/badge/FAISS-KMeans%20nredo-purple?style=for-the-badge
+[nredo-link]: #
+[sim-hash-mod-shield]: https://img.shields.io/badge/Simulation-Hashing%20%26%20Modulation-orange?style=for-the-badge
+[sim-hash-mod-link]: #
+
+<!-- Core Technologies Links -->
+[python-shield]: https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python
+[python-link]: https://www.python.org/
+[numpy-shield]: https://img.shields.io/badge/NumPy-latest-blue?style=for-the-badge&logo=numpy
+[numpy-link]: https://numpy.org/
+[pandas-shield]: https://img.shields.io/badge/Pandas-latest-blue?style=for-the-badge&logo=pandas
+[pandas-link]: https://pandas.pydata.org/
+[faiss-shield]: https://img.shields.io/badge/FAISS-latest-blue?style=for-the-badge&logo=facebook
+[sqlite-shield]: https://img.shields.io/badge/SQLite-3-blue?style=for-the-badge&logo=sqlite
+[sqlite-link]: https://www.sqlite.org/index.html
+[multiprocessing-shield]: https://img.shields.io/badge/Multiprocessing-standard_library-blue?style=for-the-badge&logo=python
+[multiprocessing-link]: https://docs.python.org/3/library/multiprocessing.html
+[faker-shield]: https://img.shields.io/badge/Faker-latest-blue?style=for-the-badge
+[faker-link]: https://faker.readthedocs.io/
+[rich-shield]: https://img.shields.io/badge/Rich-latest-blue?style=for-the-badge
+[rich-link]: https://rich.readthedocs.io/
+[logging-shield]: https://img.shields.io/badge/Logging-standard_library-blue?style=for-the-badge&logo=python
+[logging-link]: https://docs.python.org/3/library/logging.html
+
+<!-- Features & Persistence Links -->
+[faiss-index-persist-shield]: https://img.shields.io/badge/Persistence-FAISS%20Index%20(.index)-blueviolet?style=for-the-badge
+[faiss-write-index-link]: https://faiss.ai/cpp_api/group__IO__ops.html#ga52c49a1cf6459173e66f06555a84f11b # Approximate C++ API link
+[faiss-index-reuse-shield]: https://img.shields.io/badge/Feature-Reusable%20Index-brightgreen?style=for-the-badge
+[faiss-read-index-link]: https://faiss.ai/cpp_api/group__IO__ops.html#gaad31ba6171a432a23836b6890f2667f0 # Approximate C++ API link
+[persist-clusters-shield]: https://img.shields.io/badge/Task-Persist%20Cluster%20Map-darkgreen?style=for-the-badge
+[persist-clusters-link]: #
+
+<!-- Tunable Parameters Links -->
+[tune-cpu-shield]: https://img.shields.io/badge/Tune-CPU%20Workers-blue?style=for-the-badge&logo=python
+[tune-chunk-shield]: https://img.shields.io/badge/Tune-Chunk%20Size-orange?style=for-the-badge
+[tune-dims-shield]: https://img.shields.io/badge/Tune-Vector%20Dimensions-teal?style=for-the-badge
+[tune-gpu-shield]: https://img.shields.io/badge/Tune-GPU%20Acceleration-brightgreen?style=for-the-badge&logo=nvidia
+[tune-kmeans-shield]: https://img.shields.io/badge/Tune-KMeans%20Params-purple?style=for-the-badge
+[tune-persist-shield]: https://img.shields.io/badge/Tune-Persistence%20Options-darkgreen?style=for-the-badge
+[tune-link]: # # Placeholder Link
+
+<!-- Key Concepts Links -->
+[gil-shield]: https://img.shields.io/badge/Concept-GIL_(Global_Interpreter_Lock)-red?style=for-the-badge&logo=python
+[gil-link]: https://wiki.python.org/moin/GlobalInterpreterLock
+[tradeoff-shield]: https://img.shields.io/badge/Concept-Performance%20Trade--offs-red?style=for-the-badge
+[tradeoff-link]: #
+
+<!-- Validation & Output Links -->
+[rich-table-shield]: https://img.shields.io/badge/Output-Rich%20Table-purple?style=for-the-badge
+[rich-table-link]: https://rich.readthedocs.io/en/stable/tables.html
+[validate-example-shield]: https://img.shields.io/badge/Validation-Example%20Profile-yellow?style=for-the-badge
+[validate-link]: #
+
+<!-- Project Meta Links -->
+[black-shield]: https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge
+[black-link]: https://github.com/psf/black
+[license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge
+[license-link]: https://opensource.org/licenses/MIT
+[status-v5-shield]: https://img.shields.io/badge/Project_Status-Advanced_V5-brightgreen?style=for-the-badge
+[status-link]: #
+[version-shield]: https://img.shields.io/badge/Version-5.0.0-blue?style=for-the-badge
+[version-link]: #
+[maint-high-shield]: https://img.shields.io/badge/Maintainability-High-green?style=for-the-badge
+[maint-link]: #
+
+<!-- Domain Areas Links -->
+[de-shield]: https://img.shields.io/badge/Domain-Data_Engineering-blue?style=for-the-badge
+[de-link]: #
+[ml-prep-shield]: https://img.shields.io/badge/Domain-Machine_Learning_Prep-orange?style=for-the-badge
+[ml-prep-link]: #
+[ann-shield]: https://img.shields.io/badge/Domain-Vector_Search_/_ANN-purple?style=for-the-badge
+[ann-link]: #
+[hpc-shield]: https://img.shields.io/badge/Domain-High_Performance_Computing_(HPC)-red?style=for-the-badge
+[hpc-link]: #
+
+<!-- Author & Contact Links -->
+[author-shield]: https://img.shields.io/badge/Architect-Elias_Andrade-lightgrey?style=for-the-badge
+[author-link]: https://www.linkedin.com/in/itilmgf/
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn-itilmgf-blue?style=for-the-badge&logo=linkedin
+[linkedin-link]: https://www.linkedin.com/in/itilmgf/
+[github-shield]: https://img.shields.io/badge/GitHub-chaos4455-black?style=for-the-badge&logo=github
+[github-link]: https://github.com/chaos4455
+[expertise-pyperf-shield]: https://img.shields.io/badge/Expertise-Python_Performance-green?style=for-the-badge&logo=python
+[expertise-link]: #
+[expertise-vector-shield]: https://img.shields.io/badge/Expertise-Vector_Embeddings-purple?style=for-the-badge
+[location-shield]: https://img.shields.io/badge/Location-Maringá,_PR_-_Brazil-darkgreen?style=for-the-badge&logo=googlemaps
+[location-link]: https://goo.gl/maps/your-location # Placeholder Map Link
+
+<!-- Placeholders & Misc Links from Source -->
+[realizar-clustering-link]: # # Placeholder
+[faiss-kmeans-link]: https://faiss.ai/cpp_api/struct/structfaiss_1_1Kmeans.html # Approximate C++ API link
+[salvar-clusters-link]: # # Placeholder
+[salvar-blobs-link]: # # Placeholder, link to the function definition if possible
+[gerar-vetor-link]: # # Placeholder
+[fixed-array-shield]: https://img.shields.io/badge/Output-Fixed--Size%20Vector-lightgrey?style=for-the-badge
+[fixed-array-link]: #
+[gerar-embedding-link]: # # Placeholder
 ---
 
 ---
