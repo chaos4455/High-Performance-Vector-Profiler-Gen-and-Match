@@ -260,7 +260,6 @@ Além da performance bruta na geração e processamento, o projeto oferece saíd
 [![Output: Rich Console][rich-console-shield]][rich-console-link]
 [![Componente: Flask Dashboard][comp-flask-shield]][flask-link]
 [![Estilo: Tailwind CSS][comp-tailwind-shield]][tailwind-link]
-[![UI: Temas Dinâmicos][comp-themes-shield]][comp-themes-link]
 
 ### 💻 Saída Detalhada no Console (CLI - via `Rich`)
 
