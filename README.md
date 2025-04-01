@@ -50,6 +50,105 @@
 [![Location: Maringá, PR - Brazil][location-shield]][location-link]
 
 ---
+---
+
+## 🚀 Status do Projeto & Componente Web (PoC - V3 Web/Dash) 🧪
+
+Embora o projeto abaixo descrito concentre na geração de dados de alta performance, o projeto evoluiu para incluir um componente web funcional que serve como uma **Prova de Conceito (PoC)** para visualizar e interagir com os resultados do matchmaking. Esta seção detalha o estado atual dessa parte do projeto.
+
+[![Status: PoC Funcional][status-poc-shield]][status-link]
+[![Componente: Flask Dashboard][comp-flask-shield]][flask-link]
+[![Tecnologia: Jinja2 Templates][comp-jinja-shield]][jinja-link]
+[![Testes: Unit + API (unittest)][comp-unittest-shield]][unittest-link]
+[![Interação: Testes API (Requests)][comp-requests-shield]][requests-link]
+[![Carregamento: Background Threading][comp-threading-shield]][threading-link]
+
+### 🌟 Principais Componentes Atuais:
+
+*   🌐 **Aplicação Web Flask (`match-profilerv3-web-dash-full-themes.py`):**
+    *   Serve um dashboard básico que exibe um perfil de origem e seus perfis similares encontrados.
+    *   Utiliza `render_template_string` com HTML/TailwindCSS/JavaScript embutido.
+    *   Inclui rotas `/` (exibe um match aleatório) e `/new_match` (gera novo match via redirect).
+    *   Pode ser servido com o servidor de desenvolvimento Flask ou `waitress`. [![Servidor: Waitress (Opcional)][comp-waitress-shield]][waitress-link]
+
+*   🧬 **Motor de Matchmaking:**
+    *   Combina a busca por vizinhos mais próximos (ANN) via **FAISS** (carregado do índice) com uma lógica de **similaridade personalizada** (`calculate_custom_similarity`).
+    *   A similaridade personalizada considera múltiplos fatores (plataforma, disponibilidade, jogos, estilos, interação) com pesos configuráveis e **thresholds mínimos** obrigatórios (plataforma, disponibilidade).
+
+*   ⏳ **Carregamento de Dados em Background:**
+    *   Utiliza `threading` (`start_background_load`, `load_data_and_build_index`) para carregar os embeddings e construir o índice FAISS em uma thread separada ao iniciar a aplicação, evitando bloquear a inicialização do servidor Flask.
+    *   O estado do carregamento (sucesso/erro) é gerenciado em um dicionário global (`app_data`).
+
+*   🎨 **Interface com Troca de Temas:**
+    *   O dashboard web inclui um seletor `<select>` que permite ao usuário escolher entre múltiplos temas visuais pré-definidos (ex: red, purple, blue, etc.).
+    *   O tema selecionado é aplicado dinamicamente via JavaScript, modificando classes CSS (Tailwind), e persistido no `localStorage` do navegador.
+
+*   ✅ **Estrutura de Testes (`test_*.py`):**
+    *   Possui uma suíte de testes robusta usando `unittest`.
+    *   **Fase 1 (Unit/Integration):**
+        *   Carrega o módulo do Flask dinamicamente usando `importlib.util` (lidando com hífens no nome do arquivo).
+        *   Testa funções auxiliares isoladas (`safe_split_and_strip`, `jaccard_similarity`, etc.).
+        *   Verifica o carregamento de perfis (`carregar_perfil_por_id_cached`).
+        *   Valida a estrutura dos embeddings e do índice FAISS carregados.
+        *   Testa a lógica principal de matchmaking (`buscar_e_rankear_vizinhos`).
+        *   Verifica o status do carregamento de dados em background.
+    *   **Fase 2 (API):**
+        *   Inicia e para o servidor Flask como um **subprocesso** (`subprocess.Popen`).
+        *   Verifica se o servidor está respondendo na porta correta.
+        *   Usa a biblioteca `requests` para fazer requisições HTTP às rotas (`/`, `/new_match`).
+        *   Valida códigos de status HTTP, redirecionamentos e a estrutura básica do HTML retornado (presença de tags, seletores, etc.).
+
+### 🛠️ Tecnologias Adicionais Utilizadas nesta Fase:
+
+[![Tecnologia: Flask][comp-flask-shield]][flask-link]
+[![Tecnologia: Jinja2 Templates][comp-jinja-shield]][jinja-link]
+[![Tecnologia: Waitress (Opcional)][comp-waitress-shield]][waitress-link]
+[![Tecnologia: Unittest][comp-unittest-shield]][unittest-link]
+[![Tecnologia: Requests][comp-requests-shield]][requests-link]
+[![Tecnologia: Threading][comp-threading-shield]][threading-link]
+[![Tecnologia: Importlib][comp-importlib-shield]][importlib-link]
+[![Tecnologia: Subprocess][comp-subprocess-shield]][subprocess-link]
+
+*(Além das tecnologias V5 como FAISS, NumPy, Pandas, SQLite, etc., que continuam sendo a base)*
+
+### 📊 Status Atual e Limitações:
+
+*   ⚠️ **Prova de Conceito (PoC):** O sistema é funcional para demonstrar o fluxo de matchmaking e a interface básica, mas não está pronto para produção.
+*   🚧 **Em Desenvolvimento:** A interface do usuário (UI) e a experiência do usuário (UX) são rudimentares. O HTML/CSS/JS está embutido no script Python, o que não é ideal para projetos maiores.
+*   🧩 **Recursos Ausentes:**
+    *   Não há uma API dedicada para consumo externo.
+    *   O dashboard tem interação limitada (apenas gerar novo match e trocar tema).
+    *   Não há gerenciamento de usuários, autenticação ou persistência de estado da sessão além do tema.
+    *   A configuração ainda é feita principalmente por constantes no código.
+*   ✅ **Testado:** A lógica principal e os endpoints básicos da API são validados pela suíte `unittest`, garantindo a funcionalidade central.
+
+Este componente web V3 representa um passo em direção a uma aplicação mais interativa, construída sobre a base de geração de dados e processamento vetorial de alta performance da V5.
+
+---
+<!--
+===============================================================================
+ DEFINIÇÕES DE SHIELDS ADICIONAIS PARA O BLOCO V3 Web/Dash
+===============================================================================
+-->
+
+[status-poc-shield]: https://img.shields.io/badge/Status-PoC%20Funcional-yellow?style=for-the-badge
+[comp-flask-shield]: https://img.shields.io/badge/Framework-Flask-blue?style=for-the-badge&logo=flask
+[flask-link]: https://flask.palletsprojects.com/
+[comp-jinja-shield]: https://img.shields.io/badge/Templating-Jinja2-red?style=for-the-badge&logo=jinja
+[jinja-link]: https://jinja.palletsprojects.com/
+[comp-unittest-shield]: https://img.shields.io/badge/Testing-Unittest-green?style=for-the-badge&logo=python
+[unittest-link]: https://docs.python.org/3/library/unittest.html
+[comp-requests-shield]: https://img.shields.io/badge/HTTP-Requests-orange?style=for-the-badge
+[requests-link]: https://requests.readthedocs.io/
+[comp-threading-shield]: https://img.shields.io/badge/Concurrency-Threading-blueviolet?style=for-the-badge&logo=python
+[threading-link]: https://docs.python.org/3/library/threading.html
+[comp-waitress-shield]: https://img.shields.io/badge/Server-Waitress-lightgrey?style=for-the-badge
+[waitress-link]: https://waitress.readthedocs.io/
+[comp-importlib-shield]: https://img.shields.io/badge/Util-Importlib-grey?style=for-the-badge&logo=python
+[importlib-link]: https://docs.python.org/3/library/importlib.html
+[comp-subprocess-shield]: https://img.shields.io/badge/Util-Subprocess-grey?style=for-the-badge&logo=python
+[subprocess-link]: https://docs.python.org/3/library/subprocess.html
+
 
 ## 📜 Executive Summary: Performance-Obsessed Data Generation 📜
 
