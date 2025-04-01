@@ -738,35 +738,6 @@ Understanding the choice of `multiprocessing` over alternatives like `threading`
 
 ---
 
-[realizar-clustering-link]: # # Placeholder
-[faiss-kmeans-link]: https://faiss.ai/cpp_api/struct/structfaiss_1_1Kmeans.html # Approximate C++ API link
-[kmeans-shield]: https://img.shields.io/badge/Algorithm-KMeans%20Clustering-orange?style=for-the-badge
-[kmeans-link]: https://en.wikipedia.org/wiki/K-means_clustering
-[dataprep-f32-contig-shield]: https://img.shields.io/badge/DataPrep-float32%20%26%20C--Contiguous-blue?style=for-the-badge&logo=numpy
-[dataprep-link]: #
-[cpp-cuda-shield]: https://img.shields.io/badge/Optimization-C%2B%2B%20%7C%20CUDA%20Backend-red?style=for-the-badge&logo=cplusplus
-[cpp-cuda-link]: #
-[nredo-shield]: https://img.shields.io/badge/FAISS-KMeans%20nredo-purple?style=for-the-badge
-[nredo-link]: #
-[salvar-clusters-link]: # # Placeholder
-[faiss-write-index-link]: https://faiss.ai/cpp_api/group__IO__ops.html#ga52c49a1cf6459173e66f06555a84f11b # Approximate C++ API link
-[faiss-read-index-link]: https://faiss.ai/cpp_api/group__IO__ops.html#gaad31ba6171a432a23836b6890f2667f0 # Approximate C++ API link
-[faiss-index-persist-shield]: https://img.shields.io/badge/Persistence-FAISS%20Index%20(.index)-blueviolet?style=for-the-badge
-[faiss-index-reuse-shield]: https://img.shields.io/badge/Feature-Reusable%20Index-brightgreen?style=for-the-badge
-[persist-clusters-shield]: https://img.shields.io/badge/Task-Persist%20Cluster%20Map-darkgreen?style=for-the-badge
-[persist-clusters-link]: #
-[rich-table-shield]: https://img.shields.io/badge/Output-Rich%20Table-purple?style=for-the-badge
-[rich-table-link]: https://rich.readthedocs.io/en/stable/tables.html
-[validate-example-shield]: https://img.shields.io/badge/Validation-Example%20Profile-yellow?style=for-the-badge
-[validate-link]: #
-[db-index-lookup-shield]: https://img.shields.io/badge/DB%20Read-Indexed%20Lookup%20(PK)-darkblue?style=for-the-badge&logo=sqlite
-[db-index-lookup-link]: #
-[gil-shield]: https://img.shields.io/badge/Concept-GIL_(Global_Interpreter_Lock)-red?style=for-the-badge&logo=python
-[gil-link]: https://wiki.python.org/moin/GlobalInterpreterLock
-[threading-shield]: https://img.shields.io/badge/Technique-Multithreading_(I/O%20Bound)-blue?style=for-the-badge&logo=python
-[threading-link]: https://docs.python.org/3/library/threading.html
-[asyncio-shield]: https://img.shields.io/badge/Technique-AsyncIO_(I/O%20Bound)-purple?style=for-the-badge&logo=python
-[asyncio-link]: https://docs.python.org/3/library/asyncio.html
 
 ### #️⃣ Section 6-2: The Art of Vectorization - Crafting Feature Vectors ([`gerar_vetor_perfil`][gerar-vetor-link]) 📐🔢⚡
 
