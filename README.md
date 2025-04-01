@@ -50,6 +50,106 @@
 [![Location: Maringá, PR - Brazil][location-shield]][location-link]
 
 ---
+
+---
+
+## 📊 Validação Visual: Console & Dashboard PoC ✨
+
+Além da performance bruta na geração e processamento, o projeto oferece saídas visuais cruciais para **monitoramento, validação rápida e demonstração** dos resultados. Isso inclui tanto a saída detalhada no console durante a execução quanto uma interface web (Prova de Conceito) que visualiza os resultados do matchmaking.
+
+[![Output: Rich Console][rich-console-shield]][rich-console-link]
+[![Componente: Flask Dashboard][comp-flask-shield]][flask-link]
+[![Estilo: Tailwind CSS][comp-tailwind-shield]][tailwind-link]
+[![UI: Temas Dinâmicos][comp-themes-shield]][comp-themes-link]
+
+### 💻 Saída Detalhada no Console (CLI - via `Rich`)
+
+Durante a execução do script principal (ex: `profile_generator_v6.py`), a biblioteca `Rich` é utilizada para fornecer feedback claro e informativo diretamente no terminal:
+
+*   **🚀 Inicialização:** Mensagens claras indicando o início do processo, metas (número de perfis), configurações chave (paths, workers, seed) e versões.
+*   **📊 Barras de Progresso:** Indicadores visuais para tarefas longas (geração, processamento de chunks, clustering), mostrando percentual concluído, tempo decorrido e estimado restante.
+*   **✅ Indicadores de Etapa:** Uso de ícones (como ✅) e mensagens para sinalizar a conclusão bem-sucedida de cada fase principal (setup do DB, geração, salvamento, clustering, etc.).
+*   **📈 Estatísticas de Dados:** Após a geração e conversão para DataFrame, são exibidas estatísticas descritivas básicas para colunas numéricas (`df.describe()`) e contagens de valores para colunas categóricas importantes (`df.value_counts()`), oferecendo um *insight* rápido sobre a distribuição dos dados gerados.
+*   **📄 Exemplo de Perfil Detalhado:** Uma tabela formatada (`rich.table.Table`) exibe os dados completos de um perfil de exemplo selecionado aleatoriamente, incluindo:
+    *   Todos os atributos gerados (ID, Nome, Idade, Cidade, Sexo, Listas, Descrição, etc.).
+    *   Um trecho inicial dos valores do `vetor` de características.
+    *   Um trecho inicial dos valores do `embedding` semântico.
+    *   O `cluster_id` atribuído durante a fase de clustering (se executada).
+*   **🏁 Sumário Final:** Mensagens de conclusão, tempo total de execução e caminhos para os arquivos de log e bancos de dados gerados.
+*   ⚠️ **Erros/Avisos:** Mensagens de erro ou avisos são destacadas (geralmente em vermelho ou amarelo) para fácil identificação de problemas.
+
+### ✨ Dashboard Web de Matchmaking (PoC - via `Flask`)
+
+A aplicação Flask (`match-profilerv3-web-dash-full-themes.py`) serve uma interface web simples, porém funcional, para visualizar os resultados do matchmaking:
+
+*   **🎨 Interface Temática:** Apresenta um layout visualmente agradável (geralmente escuro, com variações de cores como vermelho, roxo, azul, laranja) com a possibilidade de trocar o tema dinamicamente através de um seletor.
+*   **🎯 Perfil de Origem:** Exibe em destaque o perfil selecionado como base para a busca de matches, mostrando:
+    *   Informações básicas (Nome, ID, Idade, Local, Sexo).
+    *   Atributos chave como Disponibilidade e Interação desejada.
+    *   Listas de Plataformas, Jogos Favoritos, Estilos Preferidos e Interesses Musicais em formato de *badges* (pequenas etiquetas arredondadas).
+    *   A descrição textual completa gerada para o perfil.
+*   **🤝 Perfis Similares:** Apresenta os perfis encontrados como mais compatíveis em formato de *cards*, dispostos em grade. Cada card de perfil similar mostra:
+    *   Informações básicas do perfil encontrado (Nome, ID, Idade, Local).
+    *   **⭐ Score Final:** Uma pontuação numérica proeminente (ex: 0.675, 0.833) indicando a compatibilidade geral calculada entre o perfil de origem e este perfil similar.
+    *   Atributos chave (Disponibilidade, Interação, Contato Sim/Não) com seus *scores* individuais de similaridade, quando aplicável (ex: Disponibilidade \[Score: 1.00]).
+    *   Badges para Plataformas, Jogos e Estilos, também exibindo o *score* de similaridade calculado para aquele grupo específico (ex: Plataformas \[Score: 0.67]).
+    *   **📉 Detalhes do Score Ponderado:** Uma seção *expansível* crucial que revela como o Score Final foi calculado, mostrando o score individual de cada componente (Plataformas, Disponibilidade, Jogos, Estilos, Interacao) e o peso (`Peso: X.XX`) atribuído a cada um na fórmula final.
+*   **🔄 Botão "Gerar Novo Match":** Permite ao usuário recarregar a página para visualizar um novo match aleatório.
+*   **Título Dinâmico:** O título da seção de similares pode indicar a estratégia usada (ex: "Prioridade: Plataforma/Horário", "Rankeados por Score").
+
+Essas saídas visuais são fundamentais para entender o fluxo do processo, verificar a qualidade dos dados gerados, depurar a lógica de matchmaking e apresentar os resultados de forma intuitiva.
+
+---
+<!-- Adicionar definições de shields se ainda não existirem -->
+[comp-tailwind-shield]: https://img.shields.io/badge/Style-Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css
+[tailwind-link]: https://tailwindcss.com/
+[comp-themes-shield]: https://img.shields.io/badge/UI-Temas%20Dinâmicos-informational?style=for-the-badge
+[comp-themes-link]: # <!-- Link para a seção relevante ou código JS -->
+
+
+<img width="454" alt="Cursor_eMJLYzKsFu" src="https://github.com/user-attachments/assets/a365bb93-f66b-4b7d-a1a7-c2d6c454546c" />
+
+<img width="1200" alt="Cursor_b0c4bggQVe" src="https://github.com/user-attachments/assets/5334e907-b2e4-4334-a5ba-61209e91c584" />
+
+<img width="554" alt="Cursor_AiSaHeqVCI" src="https://github.com/user-attachments/assets/b97489e9-4ca6-40e3-83a6-7e59d2d85700" />
+
+<img width="491" alt="Cursor_ADFQjZzZAT" src="https://github.com/user-attachments/assets/5990fa6d-4bfd-4ade-a16c-c915a42bdbe3" />
+
+<img width="1178" alt="chrome_RwBxZa9euB" src="https://github.com/user-attachments/assets/a2afd931-e094-48e7-8a79-ef10798bd2f5" />
+
+<img width="751" alt="chrome_UufPBL2Nl9" src="https://github.com/user-attachments/assets/00d7bb7d-a867-49a6-9dec-2ce20f3df68e" />
+
+<img width="1310" alt="chrome_ZMesO23SxX" src="https://github.com/user-attachments/assets/676974cd-121e-441f-bf01-d096cb8274bb" />
+
+<img width="1296" alt="chrome_R8LMpJTLFH" src="https://github.com/user-attachments/assets/764750fd-c109-4f9b-a252-ac7908dc28f2" />
+
+<img width="1296" alt="chrome_8bj1yS9MCA" src="https://github.com/user-attachments/assets/62e416c4-2cf4-4079-b11b-700f5f71873b" />
+
+<img width="1288" alt="chrome_rm0uwNKfJ6" src="https://github.com/user-attachments/assets/e2ef6ca8-1efa-434b-b678-10baf03639bc" />
+
+<img width="409" alt="chrome_7Ork7PCeqn" src="https://github.com/user-attachments/assets/c573bf7a-d798-48d3-bb73-f7e54f6214df" />
+
+<img width="569" alt="chrome_T4zsXWpDLI" src="https://github.com/user-attachments/assets/c4e57a63-bcb5-4c2c-9a0f-449095a06da7" />
+
+<img width="1177" alt="chrome_sxmdMOz0d6" src="https://github.com/user-attachments/assets/ace96ec8-fd41-45ab-985e-dd15d25615ee" />
+
+<img width="1175" alt="chrome_BdH7Gc5cRE" src="https://github.com/user-attachments/assets/143d4a58-a816-4cd1-8954-6f3b349bc2ed" />
+
+<img width="474" alt="chrome_5V2Ok32pav" src="https://github.com/user-attachments/assets/3ac7ff78-843e-4975-ac52-1fccee80fd54" />
+
+<img width="1136" alt="chrome_gVmNbqHoGH" src="https://github.com/user-attachments/assets/c023a6e3-a418-459b-9e82-11ed8577500e" />
+
+<img width="944" alt="chrome_YJjdsy8usB" src="https://github.com/user-attachments/assets/4df9d0e1-03ef-4dbd-8567-2a6e1632a283" />
+
+<img width="469" alt="chrome_pwpe5juZbZ" src="https://github.com/user-attachments/assets/b0c7b86c-9f05-4ca6-bedf-b589699f9fe3" />
+
+<img width="744" alt="chrome_ak18dtP8fZ" src="https://github.com/user-attachments/assets/6b4537a7-eedd-4e7a-bc70-a6c7c3510e4e" />
+
+<img width="451" alt="chrome_n0QtYS482U" src="https://github.com/user-attachments/assets/fc23651f-e5b3-4474-ae69-4ce13de0d7ab" />
+
+<img width="434" alt="chrome_QyF9bhYwmQ" src="https://github.com/user-attachments/assets/63d27be8-62d7-4795-a5dc-50e9c11f46ce" />
+
+
 ---
 
 ## 🚀 Status do Projeto & Componente Web (PoC - V3 Web/Dash) 🧪
