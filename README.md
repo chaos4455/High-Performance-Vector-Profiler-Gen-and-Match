@@ -998,29 +998,6 @@ Understanding the choice of `multiprocessing` over alternatives like `threading`
 
 ---
 
-[gerar-vetor-link]: # # Placeholder
-[feat-eng-shield]: https://img.shields.io/badge/Technique-Feature%20Engineering-blueviolet?style=for-the-badge
-[feat-eng-link]: https://en.wikipedia.org/wiki/Feature_engineering
-[fixed-array-shield]: https://img.shields.io/badge/Output-Fixed--Size%20Vector-lightgrey?style=for-the-badge
-[fixed-array-link]: #
-[trad-ml-shield]: https://img.shields.io/badge/ML%20Use-Traditional%20Models-yellow?style=for-the-badge
-[trad-ml-link]: #
-[gerar-embedding-link]: # # Placeholder
-[l2-norm-shield]: https://img.shields.io/badge/Technique-L2%20Normalization-teal?style=for-the-badge
-[l2-norm-link]: https://en.wikipedia.org/wiki/Norm_(mathematics)#Euclidean_norm
-[ann-dl-shield]: https://img.shields.io/badge/ML%20Use-ANN%20Search%20%26%20Deep%20Learning-purple?style=for-the-badge
-[ann-dl-link]: #
-[sim-hash-mod-shield]: https://img.shields.io/badge/Simulation-Hashing%20%26%20Modulation-orange?style=for-the-badge
-[sim-hash-mod-link]: #
-[tune-link]: # # Placeholder Link
-[tune-cpu-shield]: https://img.shields.io/badge/Tune-CPU%20Workers-blue?style=for-the-badge&logo=python
-[tune-chunk-shield]: https://img.shields.io/badge/Tune-Chunk%20Size-orange?style=for-the-badge
-[tune-dims-shield]: https://img.shields.io/badge/Tune-Vector%20Dimensions-teal?style=for-the-badge
-[tune-gpu-shield]: https://img.shields.io/badge/Tune-GPU%20Acceleration-brightgreen?style=for-the-badge&logo=nvidia
-[tune-kmeans-shield]: https://img.shields.io/badge/Tune-KMeans%20Params-purple?style=for-the-badge
-[tune-persist-shield]: https://img.shields.io/badge/Tune-Persistence%20Options-darkgreen?style=for-the-badge
-[tradeoff-shield]: https://img.shields.io/badge/Concept-Performance%20Trade--offs-red?style=for-the-badge
-[tradeoff-link]: #
 ### 📦 Section 10: Installation & Requirements - Setting Up the Engine 🛠️🐍⚙️
 
 [![Python Version][python-shield]][python-link]
@@ -1491,17 +1468,7 @@ This project reflects a passion for solving challenging data processing problems
 [tune-kmeans-shield]: https://img.shields.io/badge/Tune-KMeans%20Params-purple?style=for-the-badge
 [tune-persist-shield]: https://img.shields.io/badge/Tune-Persistence%20Options-darkgreen?style=for-the-badge
 
-<!-- === Misc/Placeholders === -->
-[dataprep-f32-contig-shield]: https://img.shields.io/badge/DataPrep-float32%20%26%20C--Contiguous-blue?style=for-the-badge&logo=numpy
-[dataprep-link]: #
-[nredo-shield]: https://img.shields.io/badge/FAISS-KMeans%20nredo-purple?style=for-the-badge
-[nredo-link]: #
-[faiss-index-persist-shield]: https://img.shields.io/badge/Persistence-FAISS%20Index%20(.index)-blueviolet?style=for-the-badge
-[faiss-index-reuse-shield]: https://img.shields.io/badge/Feature-Reusable%20Index-brightgreen?style=for-the-badge
-[persist-clusters-shield]: https://img.shields.io/badge/Task-Persist%20Cluster%20Map-darkgreen?style=for-the-badge
-[persist-clusters-link]: #
-[validate-example-shield]: https://img.shields.io/badge/Validation-Example%20Profile-yellow?style=for-the-badge
-[validate-link]: #
+
 
 
 
