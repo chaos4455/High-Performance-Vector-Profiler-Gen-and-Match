@@ -1,5 +1,5 @@
 
-# 🚀🚀 Profile Generator V5: An Engine for High-Performance Synthetic Data & Vector Computing 🚀🚀
+# 🚀🚀 Replika AI Vector Profile Generator : An Framework and Engine for High-Performance Synthetic Data & Vector Computing testing and study🚀🚀
 
 <!-- Core Functionality & Goal -->
 [![Generation Engine: Synthetic Profiles][gen-engine-shield]][gen-engine-link]
