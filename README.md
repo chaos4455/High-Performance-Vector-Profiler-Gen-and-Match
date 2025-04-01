@@ -6,33 +6,33 @@
 [![Focus: High Performance][perf-focus-shield]][perf-focus-link]
 [![Output: Data + Vectors + Embeddings][output-shield]][output-link]
 [![Scalability: Massive Datasets][scale-shield]][scale-link]
-[![Algorithm: KMeans Clustering][kmeans-shield]][kmeans-link] <!-- Added -->
-[![ML Use: Traditional Models][trad-ml-shield]][trad-ml-link] <!-- Added -->
-[![ML Use: ANN Search & Deep Learning][ann-dl-shield]][ann-dl-link] <!-- Added -->
+[![Algorithm: KMeans Clustering][kmeans-shield]][kmeans-link]
+[![ML Use: Traditional Models][trad-ml-shield]][trad-ml-link]
+[![ML Use: ANN Search & Deep Learning][ann-dl-shield]][ann-dl-link]
 
 <!-- Key Performance Techniques & Optimizations -->
 [![Parallelism: Multiprocessing][parallel-mp-shield]][parallel-mp-link]
 [![Concurrency Model: Process-Based][concurrency-proc-shield]][concurrency-proc-link]
-[![Technique: Multithreading (I/O Bound)][threading-shield]][threading-link] <!-- Added -->
-[![Technique: AsyncIO (I/O Bound)][asyncio-shield]][asyncio-link] <!-- Added -->
+[![Technique: Multithreading (I/O Bound)][threading-shield]][threading-link]
+[![Technique: AsyncIO (I/O Bound)][asyncio-shield]][asyncio-link]
 [![Optimization: CPU Bound Tasks][cpu-opt-shield]][cpu-opt-link]
 [![Library: NumPy Powered][numpy-perf-shield]][numpy-link]
 [![Library: FAISS Accelerated][faiss-perf-shield]][faiss-link]
 [![Hardware Acceleration: Optional GPU (FAISS)][gpu-shield]][gpu-link]
-[![Optimization: C++ | CUDA Backend][cpp-cuda-shield]][cpp-cuda-link] <!-- Added -->
+[![Optimization: C++ | CUDA Backend][cpp-cuda-shield]][cpp-cuda-link]
 [![Database I/O: Batch Optimized][db-batch-shield]][db-batch-link]
-[![DB Write: cursor.executemany][executemany-shield]][executemany-link] <!-- Added -->
-[![DB Read: Indexed Lookup (PK)][db-index-lookup-shield]][db-index-lookup-link] <!-- Added -->
-[![Transaction: Explicit BEGIN|COMMIT][tx-shield]][tx-link] <!-- Added -->
-[![SQL Clause: INSERT OR REPLACE][or-replace-shield]][or-replace-link] <!-- Added -->
+[![DB Write: cursor.executemany][executemany-shield]][executemany-link]
+[![DB Read: Indexed Lookup (PK)][db-index-lookup-shield]][db-index-lookup-link]
+[![Transaction: Explicit BEGIN|COMMIT][tx-shield]][tx-link]
+[![SQL Clause: INSERT OR REPLACE][or-replace-shield]][or-replace-link]
 [![Memory Efficiency: Float32][mem-f32-shield]][mem-f32-link]
-[![DataPrep: float32 & C-Contiguous][dataprep-f32-contig-shield]][dataprep-link] <!-- Added (Specific NumPy aspect) -->
-[![Serialization: NumPy .tobytes()][tobytes-shield]][tobytes-link] <!-- Added -->
-[![Data Type: SQLite BLOB][blob-shield]][blob-link] <!-- Added -->
-[![Technique: Feature Engineering][feat-eng-shield]][feat-eng-link] <!-- Added -->
-[![Technique: L2 Normalization][l2-norm-shield]][l2-norm-link] <!-- Added -->
-[![FAISS: KMeans nredo][nredo-shield]][nredo-link] <!-- Added -->
-[![Simulation: Hashing & Modulation][sim-hash-mod-shield]][sim-hash-mod-link] <!-- Added -->
+[![DataPrep: float32 & C-Contiguous][dataprep-f32-contig-shield]][dataprep-link]
+[![Serialization: NumPy .tobytes()][tobytes-shield]][tobytes-link]
+[![Data Type: SQLite BLOB][blob-shield]][blob-link]
+[![Technique: Feature Engineering][feat-eng-shield]][feat-eng-link]
+[![Technique: L2 Normalization][l2-norm-shield]][l2-norm-link]
+[![FAISS: KMeans nredo][nredo-shield]][nredo-link]
+[![Simulation: Hashing & Modulation][sim-hash-mod-shield]][sim-hash-mod-link]
 
 <!-- Core Technologies -->
 [![Python Version][python-shield]][python-link]
@@ -45,26 +45,13 @@
 [![Rich][rich-shield]][rich-link]
 [![Logging][logging-shield]][logging-link]
 
-<!-- Features & Persistence -->
-[![Persistence: FAISS Index (.index)][faiss-index-persist-shield]][faiss-write-index-link] <!-- Added/Modified -->
-[![Feature: Reusable Index][faiss-index-reuse-shield]][faiss-read-index-link] <!-- Added/Modified -->
-[![Task: Persist Cluster Map][persist-clusters-shield]][persist-clusters-link] <!-- Added -->
-
-<!-- Tunable Parameters -->
-[![Tune: CPU Workers][tune-cpu-shield]][tune-link] <!-- Added -->
-[![Tune: Chunk Size][tune-chunk-shield]][tune-link] <!-- Added -->
-[![Tune: Vector Dimensions][tune-dims-shield]][tune-link] <!-- Added -->
-[![Tune: GPU Acceleration][tune-gpu-shield]][tune-link] <!-- Added -->
-[![Tune: KMeans Params][tune-kmeans-shield]][tune-link] <!-- Added -->
-[![Tune: Persistence Options][tune-persist-shield]][tune-link] <!-- Added -->
-
 <!-- Key Concepts -->
-[![Concept: GIL (Global Interpreter Lock)][gil-shield]][gil-link] <!-- Added -->
-[![Concept: Performance Trade-offs][tradeoff-shield]][tradeoff-link] <!-- Added -->
+[![Concept: GIL (Global Interpreter Lock)][gil-shield]][gil-link]
+[![Concept: Performance Trade-offs][tradeoff-shield]][tradeoff-link]
 
 <!-- Validation & Output -->
-[![Output: Rich Table][rich-table-shield]][rich-table-link] <!-- Added -->
-[![Validation: Example Profile][validate-example-shield]][validate-link] <!-- Added -->
+[![Output: Rich Table][rich-table-shield]][rich-table-link]
+[![Validation: Example Profile][validate-example-shield]][validate-link]
 
 <!-- Project Meta -->
 [![Code Style: Black][black-shield]][black-link]
@@ -88,7 +75,7 @@
 [![Location: Maringá, PR - Brazil][location-shield]][location-link]
 
 <!-- ================== LINK DEFINITIONS ================== -->
-<!-- NOTE: Ensure ALL link definitions from BOTH original blocks are present below -->
+<!-- NOTE: Only remaining relevant link definitions are included -->
 
 <!-- Core Functionality & Goal Links -->
 [gen-engine-shield]: https://img.shields.io/badge/Generation_Engine-Synthetic_Profiles-blue?style=for-the-badge&logo=python
@@ -170,23 +157,6 @@
 [logging-shield]: https://img.shields.io/badge/Logging-standard_library-blue?style=for-the-badge&logo=python
 [logging-link]: https://docs.python.org/3/library/logging.html
 
-<!-- Features & Persistence Links -->
-[faiss-index-persist-shield]: https://img.shields.io/badge/Persistence-FAISS%20Index%20(.index)-blueviolet?style=for-the-badge
-[faiss-write-index-link]: https://faiss.ai/cpp_api/group__IO__ops.html#ga52c49a1cf6459173e66f06555a84f11b # Approximate C++ API link
-[faiss-index-reuse-shield]: https://img.shields.io/badge/Feature-Reusable%20Index-brightgreen?style=for-the-badge
-[faiss-read-index-link]: https://faiss.ai/cpp_api/group__IO__ops.html#gaad31ba6171a432a23836b6890f2667f0 # Approximate C++ API link
-[persist-clusters-shield]: https://img.shields.io/badge/Task-Persist%20Cluster%20Map-darkgreen?style=for-the-badge
-[persist-clusters-link]: #
-
-<!-- Tunable Parameters Links -->
-[tune-cpu-shield]: https://img.shields.io/badge/Tune-CPU%20Workers-blue?style=for-the-badge&logo=python
-[tune-chunk-shield]: https://img.shields.io/badge/Tune-Chunk%20Size-orange?style=for-the-badge
-[tune-dims-shield]: https://img.shields.io/badge/Tune-Vector%20Dimensions-teal?style=for-the-badge
-[tune-gpu-shield]: https://img.shields.io/badge/Tune-GPU%20Acceleration-brightgreen?style=for-the-badge&logo=nvidia
-[tune-kmeans-shield]: https://img.shields.io/badge/Tune-KMeans%20Params-purple?style=for-the-badge
-[tune-persist-shield]: https://img.shields.io/badge/Tune-Persistence%20Options-darkgreen?style=for-the-badge
-[tune-link]: # # Placeholder Link
-
 <!-- Key Concepts Links -->
 [gil-shield]: https://img.shields.io/badge/Concept-GIL_(Global_Interpreter_Lock)-red?style=for-the-badge&logo=python
 [gil-link]: https://wiki.python.org/moin/GlobalInterpreterLock
@@ -233,17 +203,6 @@
 [expertise-vector-shield]: https://img.shields.io/badge/Expertise-Vector_Embeddings-purple?style=for-the-badge
 [location-shield]: https://img.shields.io/badge/Location-Maringá,_PR_-_Brazil-darkgreen?style=for-the-badge&logo=googlemaps
 [location-link]: https://goo.gl/maps/your-location # Placeholder Map Link
-
-<!-- Placeholders & Misc Links from Source -->
-[realizar-clustering-link]: # # Placeholder
-[faiss-kmeans-link]: https://faiss.ai/cpp_api/struct/structfaiss_1_1Kmeans.html # Approximate C++ API link
-[salvar-clusters-link]: # # Placeholder
-[salvar-blobs-link]: # # Placeholder, link to the function definition if possible
-[gerar-vetor-link]: # # Placeholder
-[fixed-array-shield]: https://img.shields.io/badge/Output-Fixed--Size%20Vector-lightgrey?style=for-the-badge
-[fixed-array-link]: #
-[gerar-embedding-link]: # # Placeholder
----
 
 ---
 
