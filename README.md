@@ -277,6 +277,10 @@ Durante a execução do script principal (ex: `profile_generator_v6.py`), a bibl
 *   **🏁 Sumário Final:** Mensagens de conclusão, tempo total de execução e caminhos para os arquivos de log e bancos de dados gerados.
 *   ⚠️ **Erros/Avisos:** Mensagens de erro ou avisos são destacadas (geralmente em vermelho ou amarelo) para fácil identificação de problemas.
 
+
+![similarity_viz_horizontal_origin_5815_20250401_155948_dd072c28](https://github.com/user-attachments/assets/694ed21c-04e9-4da5-a2ff-2ab4ebd8cab3)
+
+
 ### ✨ Dashboard Web de Matchmaking (PoC - via `Flask`)
 
 A aplicação Flask (`match-profilerv3-web-dash-full-themes.py`) serve uma interface web simples, porém funcional, para visualizar os resultados do matchmaking:
