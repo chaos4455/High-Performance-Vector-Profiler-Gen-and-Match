@@ -201,7 +201,6 @@
 [expertise-pyperf-shield]: https://img.shields.io/badge/Expertise-Python_Performance-green?style=for-the-badge&logo=python
 [expertise-link]: #
 [expertise-vector-shield]: https://img.shields.io/badge/Expertise-Vector_Embeddings-purple?style=for-the-badge
-[location-shield]: https://img.shields.io/badge/Location-Maringá,_PR_-_Brazil-darkgreen?style=for-the-badge&logo=googlemaps
 
 ---
 
