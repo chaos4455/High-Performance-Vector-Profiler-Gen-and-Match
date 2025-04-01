@@ -202,7 +202,6 @@
 [expertise-link]: #
 [expertise-vector-shield]: https://img.shields.io/badge/Expertise-Vector_Embeddings-purple?style=for-the-badge
 [location-shield]: https://img.shields.io/badge/Location-Maringá,_PR_-_Brazil-darkgreen?style=for-the-badge&logo=googlemaps
-[location-link]: https://goo.gl/maps/your-location # Placeholder Map Link
 
 ---
 
