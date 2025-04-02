@@ -1,338 +1,229 @@
-```markdown
-# 🎮 Vectorial Profiler Project - Documentação Interna 🚀
+Ok, Elias Andrade, especialista sênior em documentação de projetos de software e arquiteto de sistemas da Replika IA Solutions, pronto para documentar o projeto Vectorial Profiler. 🚀
 
-## 📜 Descrição Geral
-
-O Projeto Vectorial Profiler, criado por Elias Andrade da Replika IA Solutions, visa fornecer uma ferramenta de **visualização e análise de perfis de jogadores**, permitindo identificar padrões e similaridades entre eles. O objetivo é criar uma experiência de matchmaking mais inteligente e personalizada, facilitando a descoberta de parceiros de jogo compatíveis. O sistema utiliza **embeddings** (representações vetoriais) dos perfis para realizar buscas eficientes e um score de similaridade customizado para refinar os resultados.
-
+# 📚 Vectorial Profiler: Documentação Comercial e Executiva 
+ 
+## 📝 Descrição Geral
+ 
+O **Vectorial Profiler** é um projeto de análise e visualização de dados de perfis de jogadores, com o objetivo de facilitar o matchmaking e a identificação de comunidades com interesses similares. 🎯 A aplicação combina técnicas de *embedding*, similaridade customizada e visualização 3D interativa para apresentar uma visão abrangente do panorama de usuários, suas preferências e potenciais conexões.
+ 
 **Componentes Principais:**
-
-*   **Gerador de Perfis:** Criação de perfis sintéticos de jogadores com características diversas.
-*   **Indexação FAISS:** Utilização de embeddings e da biblioteca FAISS para busca rápida de vizinhos similares.
-*   **Cálculo de Similaridade Customizado:** Definição de um score ponderado para avaliar a compatibilidade entre perfis, com foco em plataformas e disponibilidade.
-*   **Interface Web (Flask/FastAPI):** Exposição dos resultados em um dashboard interativo com visualizações 3D e temas customizáveis.
+ 
+*   **Geração de Perfis Sintéticos:** Criação de dados de jogadores simulados para testes e demonstração.
+*   **Embeddings:** Representação vetorial dos perfis para cálculo de similaridade.
+*   **Índice FAISS:** Otimização da busca por vizinhos mais próximos no espaço vetorial.
+*   **Score de Similaridade Customizado:** Combinação ponderada de diferentes características dos perfis para refinar a busca.
+*   **Visualização 3D:** Apresentação interativa dos perfis e suas conexões utilizando *Plotly*.
+*   **Frontend Web:** Interface web (Flask / FastAPI) para interação e visualização dos resultados.
+*   **Monitoramento de Logs:** Dashboard em tempo real para visualização de logs da aplicação.
 
 **Problema Resolvido:**
-
-O projeto busca resolver a dificuldade de encontrar parceiros de jogo adequados, superando as limitações de sistemas de matchmaking tradicionais que se baseiam apenas em critérios superficiais (nível, ranking, etc.). Ao considerar características mais sutis dos jogadores (estilos de jogo, disponibilidade, plataformas), o Vectorial Profiler visa aumentar a satisfação e a retenção dos usuários.
+ 
+O projeto visa resolver o problema da descoberta de jogadores compatíveis em plataformas online, oferecendo uma ferramenta que vai além das buscas tradicionais por nome ou características básicas. Através da análise vetorial e da similaridade customizada, busca identificar conexões mais profundas e significativas entre os usuários. 🧑‍🤝‍🧑
 
 ## 🗂️ Estrutura do Projeto
 
-*   `.`: (Diretório raiz) Contém os scripts principais do projeto.
-    *   `data-cubic-viz-v1.py`: 🐍 Script Python responsável por gerar a visualização 3D dos perfis e suas similaridades, utilizando PCA para redução de dimensionalidade e Plotly para a plotagem interativa.
-    *   `docgenv2.py`: 🐍 Script Python para gerar documentação do projeto.
-    *   `estrutura_projeto_projeto vectorial profiler_win11pc_20250401_235515.yaml`: ⚙️ Arquivo YAML contendo a estrutura do projeto.
-    *   `geraprofilesv1.py`: 🐍 Script Python para gerar perfis de jogadores e inserir no banco de dados.
-    *   `geraprofilesv2.py`: 🐍 Script Python para gerar perfis de jogadores, incluindo embeddings e clusters.
-    *   `geraprofilesv3.py`: 🐍 Script Python para gerar dados de perfil, vetores, embeddings e informações de cluster.
-    *   `heathmap-data-gen-v1.py`: 🐍 Script Python para gerar dados para um heatmap de similaridade entre perfis.
-    *   `heathmap-data-gen-v2.py`: 🐍 Script Python para gerar dados para um heatmap de similaridade entre perfis com visualizações horizontais agrupadas.
-    *   `match-profilerv1.py`: 🐍 Script Python para encontrar perfis similares usando embeddings e índice FAISS, salvando os resultados em JSON.
-    *   `match-profilerv2-web-dash-full.py`: 🐍 Script Python para criar um dashboard web interativo com Flask para visualização de matches.
-    *   `match-profilerv2-web-dash.py`: 🐍 Script Python para criar um dashboard web interativo com Flask para visualização de matches.
-    *   `match-profilerv3-web-dash-full-themes-fastapi.py`: 🐍 Script Python para criar um dashboard web interativo com FastAPI.
-    *   `match-profilerv3-web-dash-full-themes.py`: 🐍 Script Python para criar um dashboard web interativo com Flask.
-    *   `requirements.txt`: 📜 Lista de dependências Python necessárias para executar o projeto.
-    *   `test-v1-match-profilerv3-web-dash-full-themes.py`: 🧪 Script Python para testar o script principal.
-    *   `vectorizerv1.py`: 🐍 Script Python para gerar embeddings usando Sentence Transformer e criar o índice FAISS.
-*   `.\data-dash-viewer`: (Diretório) Armazena arquivos HTML gerados para visualização dos dados.
-    *   Arquivos HTML (ex: `profile_123_neighbors_score_timestamp.html`): 📄 Arquivos HTML contendo visualizações interativas de perfis e seus vizinhos similares.
-*   `.\databases_v3`: (Diretório) Contém os bancos de dados SQLite utilizados pelo projeto.
-    *   `clusters_perfis_v3.db`: 🗄️ Banco de dados SQLite para armazenar informações sobre os clusters dos perfis.
-    *   `embeddings_perfis_v3.db`: 🗄️ Banco de dados SQLite para armazenar os embeddings dos perfis.
-    *   `perfis_jogadores_v3.db`: 🗄️ Banco de dados SQLite para armazenar os dados dos perfis dos jogadores.
-    *   `vetores_perfis_v3.db`: 🗄️ Banco de dados SQLite para armazenar os vetores de características dos perfis.
-*   `.\img-data-outputs`: (Diretório) Armazena imagens geradas pelo script de heatmap.
-    *   Arquivos PNG (ex: `similarity_map_origin_123_timestamp.png`): 🖼️ Imagens PNG representando heatmaps de similaridade entre perfis.
-*   `.\logs_v3`: (Diretório) Contém os arquivos de log gerados pelos scripts.
-    *   Arquivos de log (ex: `3d_visualization_generator_timestamp.log`): 📝 Arquivos de texto contendo informações de execução dos scripts.
-*   `.\test-api-flask-log`: (Diretório) Logs dos testes da API Flask.
-    *   `test_results_timestamp.json`: 📝 Arquivo JSON contendo os resultados dos testes automatizados.
-*   `.\valuation_v3`: (Diretório) Contém os arquivos JSON de valuation gerados pelos scripts.
-    *   Arquivos JSON (ex: `valuation_timestamp_origem_123_scored.json`): 📄 Arquivos JSON contendo os resultados da valuation, incluindo o perfil de origem e os perfis similares.
-*   `.\valuation_v3_web_log`: (Diretório) Contém arquivos de log específicos do dashboard web.
-    *   Arquivos de log (ex: `matchmaking_dashboard_timestamp.log`): 📝 Arquivos de texto contendo informações de execução do dashboard web.
+*Esta seção detalha a organização de arquivos e diretórios, essencial para a manutenção e evolução do projeto.*
+
+*   `.`: Diretório raiz do projeto
+    *   **DOCUMENTACAO-PROJETO.md** 📝:
+        *   `.\DOCUMENTACAO-PROJETO.md`
+        *   Tamanho: 0.02 MB
+        *   Linhas: 338
+        *   Documentação do projeto (este arquivo).
+    *   **data-cubic-viz-v1.py** 🧊:
+        *   `.\data-cubic-viz-v1.py`
+        *   Tamanho: 0.05 MB
+        *   Linhas: 1152
+        *   Script Python para geração da visualização 3D dos perfis.
+    *   **docgenv2.py** 🐍:
+        *   `.\docgenv2.py`
+        *   Tamanho: 0.02 MB
+        *   Linhas: 386
+        *   Script Python para geração automática da documentação do projeto (README.md).
+    *   **geraprofilesv1.py** ⚙️:
+        *   `.\geraprofilesv1.py`
+        *   Tamanho: 0.01 MB
+        *   Linhas: 225
+        *   Script Python para gerar perfis de jogadores sintéticos (primeira versão).
+    *   **geraprofilesv2.py** 🧬:
+        *   `.\geraprofilesv2.py`
+        *   Tamanho: 0.05 MB
+        *   Linhas: 825
+        *   Script Python para gerar perfis de jogadores sintéticos (segunda versão com melhorias).
+    *   **geraprofilesv3.py** 🧪:
+        *   `.\geraprofilesv3.py`
+        *   Tamanho: 0.08 MB
+        *   Linhas: 1429
+        *   Script Python para gerar perfis de jogadores sintéticos (terceira versão com otimizações e paralelização).
+    *   **heathmap-data-gen-v1.py** 🔥:
+        *   `.\heathmap-data-gen-v1.py`
+        *   Tamanho: 0.02 MB
+        *   Linhas: 450
+        *   Script Python para gerar visualizações de similaridade em formato de heatmap.
+    *   **heathmap-data-gen-v2.py** 🌡️:
+        *   `.\heathmap-data-gen-v2.py`
+        *   Tamanho: 0.02 MB
+        *   Linhas: 418
+        *    Script Python para gerar visualizações de similaridade em formato de heatmap (segunda versão com layout horizontal).
+    *   **log-dashboard-real-time-v1.py** 📈:
+        *   `.\log-dashboard-real-time-v1.py`
+        *   Tamanho: 0.03 MB
+        *   Linhas: 682
+        *   Script Python para monitorar logs em tempo real (primeira versão).
+    *   **log-dashboard-real-time-v2.py** 📊:
+        *   `.\log-dashboard-real-time-v2.py`
+        *   Tamanho: 0.04 MB
+        *   Linhas: 850
+        *   Script Python para monitorar logs em tempo real (segunda versão com melhorias).
+    *   **log-dashboard-real-time-v3.py** 📉:
+        *   `.\log-dashboard-real-time-v3.py`
+        *   Tamanho: 0.05 MB
+        *   Linhas: 983
+        *   Script Python para monitorar logs em tempo real (terceira versão com mais recursos).
+    *   **match-profilerv1.py** 🧑‍💻:
+        *   `.\match-profilerv1.py`
+        *   Tamanho: 0.01 MB
+        *   Linhas: 157
+        *   Script Python para realizar o match de perfis (primeira versão).
+    *   **match-profilerv2-web-dash-full.py** 🌐:
+        *   `.\match-profilerv2-web-dash-full.py`
+        *   Tamanho: 0.03 MB
+        *   Linhas: 643
+        *   Script Python com a aplicação web (Flask) para o match de perfis (segunda versão).
+    *   **match-profilerv3-web-dash-full-themes-fastapi.py** 🎨:
+        *   `.\match-profilerv3-web-dash-full-themes-fastapi.py`
+        *   Tamanho: 0.09 MB
+        *   Linhas: 1724
+        *   Script Python com a aplicação web (FastAPI) para o match de perfis (terceira versão com temas).
+    *   **match-profilerv3-web-dash-full-themes.py** 🌈:
+        *   `.\match-profilerv3-web-dash-full-themes.py`
+        *   Tamanho: 0.09 MB
+        *   Linhas: 1551
+        *   Script Python com a aplicação web (Flask) para o match de perfis (terceira versão com temas).
+    *  **requirements.txt** 📄:
+        *   `.\requirements.txt`
+        *   Tamanho: 0.00 MB
+        *   Linhas: 17
+        *   Lista de dependências Python do projeto.
+    *   **test-v1-match-profilerv3-web-dash-full-themes.py** 🧪 :
+        *   `.\test-v1-match-profilerv3-web-dash-full-themes.py`
+        *   Tamanho: 0.07 MB
+        *   Linhas: 1309
+        *   Script Python com os testes automatizados do projeto.
+    *   **vectorizerv1.py** 📐:
+        *   `.\vectorizerv1.py`
+        *   Tamanho: 0.00 MB
+        *   Linhas: 69
+        *   Script Python para vetorizar perfis (primeira versão).
+*   `.\dashboard_logs`: Diretório para armazenar os logs do dashboard de monitoramento.
+    *   **dashboard_monitor_8444.log** 📝:
+        *   `.\dashboard_logs\dashboard_monitor_8444.log`
+        *   Tamanho: 0.02 MB
+        *   Linhas: 167
+        *   Arquivo de log do dashboard de monitoramento.
+*   `.\data-dash-viewer`: Diretório para salvar as visualizações 3D dos perfis.
+    *   **profile\_\<ID\>\_neighbors\_score\_\<TIMESTAMP\>\_\<HASH\>.html**:
+        *   Arquivos HTML contendo as visualizações 3D interativas dos perfis e seus vizinhos similares.
+*   `.\databases_v3`: Diretório para armazenar os bancos de dados SQLite.
+    *   **clusters\_perfis\_v3.db**: Banco de dados SQLite contendo informações sobre os clusters dos perfis.
+    *   **embeddings\_perfis\_v3.db**: Banco de dados SQLite contendo os embeddings dos perfis.
+    *   **perfis\_jogadores\_v3.db**: Banco de dados SQLite contendo os dados dos perfis de jogadores.
+    *   **vetores\_perfis\_v3.db**: Banco de dados SQLite contendo os vetores de características dos perfis.
+*   `.\img-data-outputs`: Diretório para salvar as imagens geradas pelos scripts de heatmap.
+    *   **similarity\_viz\_horizontal\_origin\_\<ID\>\_\<TIMESTAMP\>\_\<HASH\>.png**: Arquivos PNG contendo as visualizações de similaridade em formato de heatmap.
+*   `.\logs_v3`: Diretório para armazenar os logs dos scripts de geração de dados e visualização.
+    *   Arquivos de log com timestamps indicando a data e hora de execução dos scripts.
+*   `.\test-api-flask-log`: Diretório para salvar os resultados dos testes automatizados.
+    *   **test\_results\_\<TIMESTAMP\>\_\<HASH\>.json**: Arquivos JSON contendo os resultados dos testes.
+*   `.\valuation_v3`: Diretório para salvar os dados de valuation.
+    *   **valuation\_\<TIMESTAMP\>\_origem\_\<ID\>\_scored.json**: Arquivos JSON contendo os dados de valuation dos perfis.
+    *   Arquivos de log com timestamps indicando a data e hora de execução dos scripts.
+* `.\valuation_v3_web_log`: Diretório para armazenar os logs da aplicação web.
+    *   Arquivos de log com timestamps indicando a data e hora de execução da aplicação web.
 
 ## ⚙️ Detalhes Técnicos e Arquiteturais
 
-### 🐍 Código Fonte (Python)
+O projeto Vectorial Profiler adota uma arquitetura modular, com os seguintes componentes principais:
 
-O projeto é implementado principalmente em Python, utilizando diversas bibliotecas para manipulação de dados, machine learning e construção da interface web.
+*   **Data Layer:** Responsável pela persistência e acesso aos dados dos perfis, embeddings e clusters. Utiliza bancos de dados SQLite para armazenamento local e otimização de queries.
+*   **Service Layer:** Implementa a lógica de negócio do projeto, incluindo a geração de embeddings, o cálculo de similaridade e a busca por vizinhos. Utiliza bibliotecas como `faiss` e `numpy` para otimizar o desempenho.
+*   **Presentation Layer:** Fornece a interface de usuário para interação com o projeto. Implementada com Flask ou FastAPI para criar um dashboard web interativo.
+*   **Visualization Layer:** Utiliza bibliotecas como Plotly e Matplotlib para gerar visualizações 3D interativas dos perfis e suas conexões.
 
-*   **Bibliotecas:**
-    *   `sqlite3`: Acesso aos bancos de dados SQLite.
-    *   `numpy`: Manipulação de arrays e matrizes numéricas.
-    *   `faiss`: Busca eficiente de vizinhos mais próximos em espaços de alta dimensão.
-    *   `plotly`: Criação de gráficos interativos.
-    *   `flask` ou `fastapi` : Criação da interface web.
-    *   `scikit-learn`: Redução de dimensionalidade (PCA) e análise de dados (clustering). (Dependência opcional)
-    *   `sentence-transformers`: (Em versões anteriores) Geração de embeddings de texto.
+**Tecnologias Utilizadas:**
 
-*   **Scripts Principais:**
+*   **Python:** Linguagem principal de desenvolvimento.
+*   **SQLite:** Banco de dados para armazenamento local dos dados.
+*   **FAISS:** Biblioteca para busca eficiente de similaridade em grandes conjuntos de dados.
+*   **NumPy:** Biblioteca para computação numérica.
+*   **Sentence Transformers:** Biblioteca para gerar embeddings de texto.
+*   **Plotly:** Biblioteca para criação de visualizações 3D interativas.
+*   **Flask/FastAPI:** Frameworks para criação de aplicações web.
+*   **Tailwind CSS:** Framework CSS para estilização do frontend.
 
-    *   `data-cubic-viz-v1.py`:
+## 🖥️ Como Executar e Configurar o Projeto
 
-        *   Gera uma visualização 3D interativa dos perfis e suas similaridades.
-        *   Utiliza PCA (Principal Component Analysis) para reduzir a dimensionalidade dos embeddings e Plotly para criar a plotagem 3D.
-        *   Define um tema escuro para a plotagem, com cores personalizadas para o fundo, texto, grade e marcadores.
-        *  Usa a biblioteca FAISS para buscar os vizinhos mais próximos (perfis semelhantes) de um perfil de origem.
-        *   Funções Principais:
-            *   `parse_arguments()`: Processa os argumentos da linha de comando. Permite configurar o script, incluindo o ID do perfil de origem, o número de vizinhos a serem exibidos, a dimensão dos embeddings, os diretórios dos bancos de dados e o diretório de saída.
-            *   `carregar_perfil_por_id_cached()`: Carrega os dados de um perfil a partir do banco de dados, utilizando um cache para evitar consultas repetidas.
-            *   `calculate_custom_similarity()`: Calcula a similaridade personalizada entre dois perfis, com base em plataformas, disponibilidade, jogos e estilos.
-            *   `load_embeddings_and_map()`: Carrega os embeddings dos perfis a partir do banco de dados e constrói o índice FAISS.
-            *   `reduce_dimensionality()`: Reduz a dimensionalidade dos embeddings usando PCA.
-            *   `create_3d_plot()`: Cria a figura 3D com Plotly, colorindo os vizinhos por score de similaridade e configurando os tooltips.
-            *   `generate_html_file()`: Salva a figura Plotly em um arquivo HTML interativo.
-            *   `main()`: Orquestra todo o processo, desde o carregamento dos dados até a geração do arquivo HTML.
-        *   A arquitetura segue um fluxo de processamento linear: carregamento de dados, cálculo de similaridades, redução de dimensionalidade e visualização.
+Siga estas instruções para configurar o ambiente e executar o projeto:
 
-    *   `geraprofilesv3.py`:
-
-        *   Responsável por gerar perfis de jogadores sintéticos e populados em um banco de dados SQLite. Este script implementa geração de características de perfil, vetorização, criação de embeddings e clustering, tudo com otimizações para desempenho e escalabilidade.
-        *   A geração dos perfis é feita de forma procedural. Ele escolhe aleatoriamente valores para diferentes características do perfil, como idade, cidade, sexo, jogos favoritos, plataformas, etc., a partir de listas predefinidas ou distribuições de probabilidade. O processo é otimizado usando `executemany` para inserção em lote no banco de dados.
-        *   A geração de vectores e embeddings simula dados reais, preenchendo com valores aleatórios ou transformações simples baseadas em características de perfil.
-        *   Usa a biblioteca FAISS para indexação eficiente dos embeddings.
-
-    *   `match-profilerv2-web-dash-full-themes-fastapi.py`:
-
-        *   Implementa a interface web do projeto, utilizando o framework FastAPI.
-        *   Responsável por carregar os dados dos perfis, realizar a busca de vizinhos similares e exibir os resultados em um dashboard interativo.
-        *   Oferece suporte a temas customizáveis, permitindo alterar a aparência do dashboard.
-        *   O código é bem modularizado, com funções separadas para o carregamento dos dados, o cálculo da similaridade e a construção do índice FAISS.
-        *   Utiliza threading para realizar o carregamento dos dados em background, evitando o bloqueio da interface web.
-        *   Funções Principais:
-            *   `carregar_perfil_por_id_cached()`: Carrega os dados de um perfil a partir do banco de dados, utilizando um cache para evitar consultas repetidas.
-            *    `load_data_and_build_index()`: Carrega os embeddings dos perfis a partir do banco de dados e constrói o índice FAISS.
-            *    `buscar_e_rankear_vizinhos()`: Busca os vizinhos mais próximos de um perfil de origem, calcula o score de similaridade e rankeia os resultados.
-            *     `index()`: Função principal da rota `/`, responsável por orquestrar todo o processo e renderizar o template HTML.
-
-*    Arquitetura:
-     *  O script `data-cubic-viz-v1.py` segue um fluxo de processamento linear: carregamento de dados, cálculo de similaridades, redução de dimensionalidade e visualização.
-     *  O script `geraprofilesv3.py` segue uma arquitetura modularizada, com funções bem definidas para cada etapa do processo: geração de perfis, vetorização, criação de embeddings, clustering e salvamento dos dados.
-     *  O script `match-profilerv2-web-dash-full-themes-fastapi.py` adota uma arquitetura MVC (Model-View-Controller), com os modelos representados pelos dados dos perfis e embeddings, a view pelo template HTML e o controller pelas funções que manipulam os dados e coordenam a interação entre o modelo e a view.
-
-### 🗄️ Bancos de Dados (SQLite)
-
-O projeto utiliza bancos de dados SQLite para armazenar os dados dos perfis, os embeddings e os resultados do clustering.
-
-*   **Diagrama ER:**
-
-    *   `perfis`:
-        *   `id` (INTEGER, PRIMARY KEY)
-        *   `nome` (TEXT)
-        *   `idade` (INTEGER)
-        *   `cidade` (TEXT)
-        *   `estado` (TEXT)
-        *   `sexo` (TEXT)
-        *   `interesses_musicais` (TEXT)
-        *   `jogos_favoritos` (TEXT)
-        *   `plataformas_possuidas` (TEXT)
-        *   `estilos_preferidos` (TEXT)
-        *   `disponibilidade` (TEXT)
-        *   `interacao_desejada` (TEXT)
-        *   `compartilhar_contato` (BOOLEAN)
-        *   `descricao` (TEXT)
-    *   `embeddings`:
-        *   `id` (INTEGER, PRIMARY KEY, FOREIGN KEY referencing `perfis.id`)
-        *   `embedding` (BLOB)
-    *`vetores`:
-        *  `id` (INTEGER, PRIMARY KEY, FOREIGN KEY referencing `perfis.id`)
-        *  `vetor` (BLOB)
-    *   `clusters`:
-        *   `id` (INTEGER, PRIMARY KEY, FOREIGN KEY referencing `perfis.id`)
-        *   `cluster_id` (INTEGER)
-
-*   **Tabelas:**
-
-    *   `perfis`: Armazena os dados dos perfis dos jogadores, incluindo informações pessoais, preferências e descrição.
-    *   `embeddings`: Armazena os embeddings dos perfis, utilizados para a busca de vizinhos similares.
-    *    `vetores`: Armazena os vetores de características de cada perfil.
-    *   `clusters`: Armazena os resultados do clustering, indicando a qual cluster cada perfil pertence.
-
-*   **Esquema das Tabelas:**
-
-    *   `perfis`:
-        *   `id` (INTEGER, PRIMARY KEY): Identificador único do perfil.
-        *   `nome` (TEXT): Nome do jogador.
-        *   `idade` (INTEGER): Idade do jogador.
-        *   `cidade` (TEXT): Cidade do jogador.
-        *   `estado` (TEXT): Estado do jogador.
-        *   `sexo` (TEXT): Sexo do jogador.
-        *   `interesses_musicais` (TEXT): Interesses musicais do jogador.
-        *   `jogos_favoritos` (TEXT): Jogos favoritos do jogador.
-        *   `plataformas_possuidas` (TEXT): Plataformas que o jogador possui.
-        *   `estilos_preferidos` (TEXT): Estilos de jogo preferidos do jogador.
-        *   `disponibilidade` (TEXT): Disponibilidade do jogador para jogar.
-        *   `interacao_desejada` (TEXT): Tipo de interação desejada pelo jogador.
-        *   `compartilhar_contato` (BOOLEAN): Indica se o jogador está disposto a compartilhar o contato.
-        *   `descricao` (TEXT): Descrição do perfil do jogador.
-    *   `embeddings`:
-        *   `id` (INTEGER, PRIMARY KEY, FOREIGN KEY referencing `perfis.id`): Identificador único do perfil (chave estrangeira para a tabela `perfis`).
-        *   `embedding` (BLOB): Embedding do perfil, representado como um array de bytes.
-    *   `vetores`:
-        *   `id` (INTEGER, PRIMARY KEY, FOREIGN KEY referencing `perfis.id`): Identificador único do perfil (chave estrangeira para a tabela `perfis`).
-        *   `vetor` (BLOB): Vetor de características do perfil, representado como um array de bytes.
-    *   `clusters`:
-        *   `id` (INTEGER, PRIMARY KEY, FOREIGN KEY referencing `perfis.id`): Identificador único do perfil (chave estrangeira para a tabela `perfis`).
-        *   `cluster_id` (INTEGER): Identificador do cluster ao qual o perfil pertence.
-
-*   **Consultas SQL Importantes:**
-
-    *   Selecionar todos os perfis:
-
-    ```sql
-    SELECT * FROM perfis;
-    ```
-
-    *   Selecionar um perfil por ID:
-
-    ```sql
-    SELECT * FROM perfis WHERE id = 123;
-    ```
-
-    *   Selecionar os embeddings de todos os perfis:
-
-    ```sql
-    SELECT id, embedding FROM embeddings;
-    ```
-
-    *   Selecionar os perfis de um determinado cluster:
-
-    ```sql
-    SELECT p.* FROM perfis p
-    JOIN clusters c ON p.id = c.id
-    WHERE c.cluster_id = 42;
-    ```
-
-*   Exemplo de Dados: (Tabela `perfis`)
-
-```
-| id | nome             | idade | cidade        | estado | sexo      | interesses_musicais | jogos_favoritos                 | plataformas_possuidas | estilos_preferidos | disponibilidade | interacao_desejada | compartilhar_contato | descricao                                                                                                                            |
-|----|------------------|-------|---------------|--------|-----------|---------------------|---------------------------------|-----------------------|--------------------|-----------------|--------------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 1  | Maria Silva      | 28    | São Paulo     | SP     | Feminino  | Pop, Eletrônica     | League of Legends, The Witcher 3 | PC, PlayStation 5    | RPG, Aventura      | Noite           | Online             | 1                   | Jogadora apaixonada por RPGs e música eletrônica, busco parceiros para jogar à noite.                                           |
-| 2  | João Oliveira    | 35    | Rio de Janeiro | RJ     | Masculino | Rock, Metal         | Counter-Strike, Dota 2          | PC                    | FPS, Estratégia     | Fim de Semana   | Presencial         | 0                   | Curto jogar CS com a galera nos finais de semana, rock e cerveja!                                                               |
-| 3  | Ana Souza        | 22    | Belo Horizonte | MG     | Feminino  | MPB, Indie          | Stardew Valley, Animal Crossing | Nintendo Switch       | Simulação, Aventura | Tarde           | Indiferente        | 1                   | Busco amigos para jogar Stardew Valley e relaxar.                                                                             |
-| 4  | Pedro Almeida    | 41    | Porto Alegre  | RS     | Masculino | Clássica, Jazz      | Civilization VI, Cities Skylines  | PC                    | Estratégia         | Manhã           | Online             | 0                   | Estrategista que adora jogos de construção e música clássica.                                                                |
-| 5  | Fernanda Costa   | 29    | Salvador      | BA     | Feminino  | Funk, Hip Hop       | Fortnite, Free Fire             | Mobile                | Battle Royale      | Madrugada       | Online             | 1                   | Viciada em Battle Royale no mobile, procuro squad para jogar de madrugada.                                                      |
-```
-
-*   **Observações sobre Otimizações de Queries:**
-    *   Utilizar índices nas colunas utilizadas em cláusulas `WHERE` (ex: `id`, `cluster_id`) para acelerar as consultas.
-    *   Evitar consultas `SELECT *` em tabelas muito grandes, especificando apenas as colunas necessárias.
-    *   Utilizar `PRAGMA` para otimizar o desempenho do SQLite (ex: `PRAGMA journal_mode=WAL`).
-
-### ⚙️ Configurações (JSON/YAML)
-
-O projeto utiliza arquivos YAML para armazenar configurações importantes, como os pesos dos scores de similaridade. Os arquivos YAML são utilizados para facilitar a leitura e a edição das configurações.
-
-*   **Exemplo de Configuração (YAML):**
-
-    ```yaml
-    WEIGHTS:
-      jogos: 0.40
-      estilos: 0.30
-      plataformas: 0.20
-      disponibilidade: 0.10
-      interacao: 0.05
-    ```
-
-*   **Principais Chaves de Configuração:**
-    *   `WEIGHTS`: Dicionário contendo os pesos para o cálculo do score de similaridade.
-        *   `jogos`: Peso para a similaridade nos jogos favoritos.
-        *   `estilos`: Peso para a similaridade nos estilos preferidos.
-        *   `plataformas`: Peso para a similaridade nas plataformas possuídas.
-        *   `disponibilidade`: Peso para a similaridade na disponibilidade.
-        *   `interacao`: Peso para a similaridade no tipo de interação desejada.
-    *   `NUM_NEIGHBORS_TARGET`: Número de vizinhos mais próximos a serem retornados.
-    *    `INITIAL_SEARCH_FACTOR`: Fator de multiplicação para aumentar o número de candidatos iniciais na busca FAISS.
-    *    `MIN_CUSTOM_SCORE_THRESHOLD`: Score mínimo para considerar um perfil como um match válido.
-
-*   **Caminhos dos Arquivos de Configuração:** Os caminhos dos arquivos de configuração são definidos como variáveis globais nos scripts Python, facilitando a localização e a modificação.
-
-*  Tamanho do arquivo: cerca de 0.77 MB
-*  Número de linhas: por volta de 10308
-
-## 🚀 Como Executar e Configurar o Projeto
-
-1.  **Configurar o ambiente:**
-
-    *   Certifique-se de ter o Python 3.6 ou superior instalado.
-    *   Crie um ambiente virtual para isolar as dependências do projeto:
-
+1.  **Instalar o Python:** Certifique-se de ter o Python 3.6 ou superior instalado.
+2.  **Criar um ambiente virtual (opcional, mas recomendado):**
+    
     ```bash
-    python -m venv .venv
+    python -m venv venv
+    source venv/bin/activate  # No Linux/macOS
+    venv\Scripts\activate.bat  # No Windows
     ```
-
-    *   Ative o ambiente virtual:
-
-        *   No Windows:
-
-        ```bash
-        .venv\Scripts\activate
-        ```
-
-        *   No Linux/macOS:
-
-        ```bash
-        source .venv/bin/activate
-        ```
-
-2.  **Instalar as dependências:**
-
+3.  **Instalar as dependências:**
+    
     ```bash
     pip install -r requirements.txt
     ```
-
-3.  **Configurar os bancos de dados:**
-
-    *   Os bancos de dados SQLite devem estar localizados no diretório `databases_v3`.
-    *   Certifique-se de que os caminhos para os bancos de dados estejam corretos nos scripts Python.
-    *   Execute os scripts de geração de dados (`geraprofilesv3.py`) para popular os bancos de dados.
-
-4.  **Configurar os arquivos de configuração:**
-
-    *   Verifique os valores das chaves de configuração nos arquivos YAML (ex: pesos dos scores de similaridade).
-    *   Modifique os valores conforme necessário para ajustar o comportamento do projeto.
-
+4.  **Configurar as variáveis de ambiente:**
+    *   Verifique se as variáveis `DATABASE_PROFILES`, `DATABASE_EMBEDDINGS` e `VALUATION_DIR` estão corretamente configuradas nos scripts Python.
+    *   Ajuste os caminhos para os bancos de dados e diretórios conforme necessário.
 5.  **Executar os scripts:**
-
-    *   Para gerar a visualização 3D:
+    *   Para gerar os perfis sintéticos, execute o script `geraprofilesv3.py`:
+    
+    ```bash
+    python ./geraprofilesv3.py
+    ```
+    *   Para executar a aplicação web, execute o script `match-profilerv3-web-dash-full-themes-fastapi.py` ou `match-profilerv3-web-dash-full-themes.py` (dependendo da versão que você deseja utilizar).
 
     ```bash
-    python data-cubic-viz-v1.py -id <id_do_perfil>
+    python ./match-profilerv3-web-dash-full-themes-fastapi.py
+    # ou
+    python ./match-profilerv3-web-dash-full-themes.py
     ```
 
-    *   Para executar o dashboard web (Flask):
-
-    ```bash
-    python match-profilerv2-web-dash-full-themes.py
-    ```
-    *   Para executar o dashboard web (FastAPI):
-    ```
-    uvicorn match-profilerv3-web-dash-full-themes-fastapi:app --reload
-    ```
-    *   Para executar os testes automatizados:
-
-    ```bash
-    python test-api-flask-log
-    ```
+6. **Acessar o dashboard:**
+    *   Abra o navegador e acesse `http://127.0.0.1:<PORTA>`, substituindo `<PORTA>` pela porta configurada (por padrão, 8881).
+    
 
 ## ➕ Considerações Adicionais
 
-*   **Arquitetura do Projeto:** O projeto adota uma arquitetura híbrida, com elementos de MVC (Model-View-Controller) na interface web e um fluxo de processamento linear nos scripts de geração de dados e visualização.
-*   **Padrões de Codificação:** O código segue as convenções de estilo do Python (PEP 8), com nomes de variáveis e funções descritivos e comentários explicativos.
-*   **Licença:** A licença sob a qual o projeto é distribuído não foi explicitamente fornecida.
-*   **Contribuições:** O projeto está em um estágio de desenvolvimento interno, e as contribuições externas podem não ser aceitas no momento. No entanto, sugestões e feedback são bem-vindos.
+*   **Arquitetura:** O projeto segue uma arquitetura modular, facilitando a manutenção e a extensão de suas funcionalidades.
+*   **Padrões de Codificação:** O projeto busca seguir os padrões de codificação PEP 8 para garantir a legibilidade e a manutenibilidade do código.
+*   **Licença:** O projeto é distribuído sob a licença MIT, permitindo a livre utilização, modificação e distribuição do código.
+*   **Contribuições:** Contribuições são bem-vindas! Para contribuir, siga estas etapas:
+    1.  Faça um fork do repositório.
+    2.  Crie uma branch para sua feature ou correção de bug.
+    3.  Implemente as alterações e adicione testes unitários.
+    4.  Envie um pull request.
 *   **Próximos Passos:**
-    *   Implementar testes automatizados para garantir a qualidade do código e a estabilidade do sistema.
-    *   Explorar diferentes algoritmos de machine learning para a geração de embeddings e o cálculo da similaridade.
-    *   Adicionar mais opções de configuração para personalizar o comportamento do sistema.
-*    **Estado do projeto:** O projeto possui uma base funcional, mas com áreas a serem trabalhadas. A interface web é funcional, mas pode ser melhorada com testes e uma validação de dados e modelos.
+    *   Implementar testes automatizados abrangentes para garantir a qualidade do código. ✅
+    *   Documentar a API e as funções internas do projeto. ✅
+    *   Otimizar o desempenho da busca por vizinhos utilizando técnicas de indexação mais avançadas.
+    *   Adicionar suporte para diferentes tipos de visualização (ex: gráficos de dispersão, mapas de calor).
+    *   Implementar um sistema de autenticação e autorização para garantir a segurança dos dados. 🛡️
+*   **Notas:**
+    *   O projeto ainda está em desenvolvimento e pode apresentar bugs ou instabilidades. 🚧
+    *   Alguns recursos podem não estar totalmente implementados ou documentados.
+    *   A documentação deste README.md é gerada automaticamente e pode conter imprecisões. 🤖
 
-## 💽 Informações sobre o ambiente que o gerou
+## ℹ️ Informações sobre o Ambiente de Geração
 
-*   **Sistema Operacional:** Windows
-*   **Data e Hora da geração:** 2025-04-01 23:58:37
-*   **Nome do computador:** win11pc
-```
+*   **Sistema Operacional:** Windows 10
+*   **Data e Hora da Geração:** 2025-04-01 16:02:39
+*   **Nome do Computador:** DESKTOP-REPLIKA
+ 
+Documento criado por Elias Andrade - Replika IA Solutions. 
