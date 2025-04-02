@@ -251,6 +251,39 @@ The matchmaking dashboard is just *one* powerful application. The underlying fra
 
 This exploration, engineered by me, Elias Andrade, demonstrates the power of combining performance engineering with modern AI techniques to build scalable and insightful data solutions.
 
+## ✨ Update Note: Real-Time Log Monitoring Dashboards Introduced! ✨
+
+**Date:** 02/04/2025 | **Time:** 01:01 AM BRT | **Location:** Maringá, PR 🇧🇷 | **Author:** Elias Andrade
+
+[![Python Shield](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)](https://www.python.org/) [![Flask Shield](https://img.shields.io/badge/Framework-Flask-grey?style=for-the-badge&logo=flask)](https://flask.palletsprojects.com/) [![Chart.js Shield](https://img.shields.io/badge/Charting-Chart.js-ff6384?style=for-the-badge&logo=chartdotjs)](https://www.chartjs.org/) [![HTML5 Shield](https://img.shields.io/badge/Frontend-HTML/CSS/JS-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/) [![REST API Shield](https://img.shields.io/badge/API-RESTful%20Data%20Feed-brightgreen?style=for-the-badge)](https://restfulapi.net/) [![Observability Shield](https://img.shields.io/badge/Practice-Enhanced%20Observability-blueviolet?style=for-the-badge)](https://en.wikipedia.org/wiki/Observability)
+
+Esta atualização incremental introduz **Dashboards Web Dedicados ao Monitoramento de Logs em Tempo Real** ao projeto Vectorial Profiler! 🚀
+
+### 🧩 Novos Módulos Adicionados:
+
+*   **`log-dashboard-real-time-v1.py`** 📈
+*   **`log-dashboard-real-time-v2.py`** 📊
+*   **`log-dashboard-real-time-v3.py`** 📉
+*   
+<img width="1920" alt="chrome_hDjXeAK7ni" src="https://github.com/user-attachments/assets/73f825ea-2ae0-4d75-91d6-ac285372c679" />
+
+<img width="1920" alt="chrome_we0eeXZqWG" src="https://github.com/user-attachments/assets/5d52faa4-38b4-4f2d-a025-c85b1804b2a4" />
+
+<img width="1229" alt="chrome_XWu8GXlnnY" src="https://github.com/user-attachments/assets/5a982723-eadc-418c-b48f-941a45cb48bf" />
+
+<img width="1920" alt="chrome_6suZYyFA2a" src="https://github.com/user-attachments/assets/762a8197-ea2b-4bce-a9f9-723c7956929d" />
+
+### 🌟 Principais Recursos e Vantagens:
+
+*   ⏱️ **Visualização Dinâmica:** Gráficos de atividade de logs por minuto e listagem das entradas mais recentes, atualizados automaticamente.
+*   🔢 **Métricas Essenciais:** Cards com contagens totais e por nível (INFO ✅, WARNING ⚠️, ERROR ❌) para avaliação rápida da saúde.
+*   🔄 **API RESTful Integrada:** Cada dashboard possui um backend Flask que serve os dados processados dos logs via endpoints JSON (ex: `/data`).
+*   🎯 **Monitoramento Embutido (Boa Prática):** Oferece visibilidade *localizada* e diagnóstico rápido *dentro* do próprio serviço/componente, complementando sistemas de logging centralizados. Ideal para depuração focada e observabilidade operacional básica sem ferramentas externas pesadas. 👍💡
+*   ⚙️ **Configurabilidade:** Permite definir o diretório de logs a ser monitorado (`MONITORED_LOG_DIR`) e a janela de tempo (`DATA_RETENTION_MINUTES`).
+*   🖼️ **Interface Clara:** Utiliza Chart.js para gráficos interativos e um layout limpo para fácil interpretação (como visto nas capturas de tela fornecidas).
+
+Esta adição visa aprimorar significativamente a capacidade de monitoramento e diagnóstico do projeto, reforçando a robustez e a manutenibilidade. ✨
+
 ---
 
 ## 📊 Validação Visual: Console & Dashboard PoC ✨
